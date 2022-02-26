@@ -1,4 +1,3 @@
-
 import datetime
 
 from lxml import html
@@ -26,7 +25,6 @@ class GithubSpider(scrapy.Spider):
         status_code = response.status  # 状态码
 
         #========数据解析=========
-
         page_text = response.text
         tree = etree.HTML(page_text)
         li_list = tree.xpath('//*[@id="js-pjax-container"]/div/div[3]/div/ul/li')
@@ -77,4 +75,3 @@ class GithubSpider(scrapy.Spider):
         item['item_describe'] = item_describe
 
         yield item
-

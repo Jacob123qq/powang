@@ -4,7 +4,6 @@
 # https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 import random
 
-
 from scrapy import signals
 
 # useful for handling different item types with a single interface
@@ -63,7 +62,6 @@ class PowangDownloaderMiddleware:
     # scrapy acts as if the downloader middleware does not modify the
     # passed objects.
 
-
     user_agent_list = [
         "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.1 "
         "(KHTML, like Gecko) Chrome/22.0.1207.1 Safari/537.1",
@@ -112,7 +110,6 @@ class PowangDownloaderMiddleware:
         crawler.signals.connect(s.spider_opened, signal=signals.spider_opened)
         return s
 
-
     # 拦截请求
     def process_request(self, request, spider):
         # UA伪装
@@ -131,7 +128,6 @@ class PowangDownloaderMiddleware:
         # - return a Request object
         # - or raise IgnoreRequest
         return response
-
 
     # 拦截发生异常的请求
     def process_exception(self, request, exception, spider):
